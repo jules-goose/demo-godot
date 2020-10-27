@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://gloworbs/Orb.scn" type="PackedScene" id=1]
+[ext_resource path="res://gloworbs/Base.scn" type="PackedScene" id=2]
+[ext_resource path="res://gloworbs/gloworb.gd" type="Script" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[sub_resource type="SpatialMaterial" id=3]
+
+[sub_resource type="SpatialMaterial" id=2]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Base" parent="." instance=ExtResource( 2 )]
+material/0 = SubResource( 1 )
+
+[node name="Orb" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00441217, 0.915416, 0.0653474 )
+material_override = SubResource( 3 )
+material/0 = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.759101, 5.03732 )
